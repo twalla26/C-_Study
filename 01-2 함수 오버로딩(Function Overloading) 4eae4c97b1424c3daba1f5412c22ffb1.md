@@ -57,7 +57,7 @@ MyFunc(int a, int b) called
 ```
 #include <iostream>
 
-void swap(int *a, int *b) {
+void swap(int *a, int *b) { // 역참조 연산자를 이용해 값을 다루도록 설계
     int c = 0;
     c = *a;
     *a = *b;
@@ -80,7 +80,7 @@ void swap(double *a, double *b) {
 
 int main(void) {
     int num1=20, num2=30;
-    swap(&num1, &num2);
+    swap(&num1, &num2); // swap 함수로 넘어오는 값은 변수의 주소
     std::cout << num1 << ' ' << num2 << std::endl;
 
     char ch1='A', ch2='Z';
