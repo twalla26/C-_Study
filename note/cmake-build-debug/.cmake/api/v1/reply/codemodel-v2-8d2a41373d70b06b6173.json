@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/twalla/Desktop/Github/OOP_Study/note/cmake-build-debug",
-		"source" : "/Users/twalla/Desktop/Github/OOP_Study/note"
+		"build" : "/Users/twalla/projects/OOP_Study/note/cmake-build-debug",
+		"source" : "/Users/twalla/projects/OOP_Study/note"
 	},
 	"version" : 
 	{
