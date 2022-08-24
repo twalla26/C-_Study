@@ -1,7 +1,6 @@
 # OOP_Study
 studying C++
 
-# C++
 <aside>
 📌 1학년 여름방학 방중강의와 함께 공부한 C++ 내용을 정리하는 공간
 
