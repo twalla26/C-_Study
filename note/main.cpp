@@ -1,54 +1,64 @@
 #include <iostream>
 using namespace std;
 
-// #define: 매크로 정의 -> 컴파일러가 컴파일 전에, 전처리됨.
-#define ID_LEN 20
-#define MAX_SPD 200
-#define FUEL_STEP 2
-#define ACC_STEP 10
-#define BRK_STEP 10
-// 매크로 상수 -> 미리 정의한 매크로 상수명이 쓰이면, 매크로 확장 문자열로 치환함.
+class FruitSeller { // 과일 판매자 클래스 선언
+private:
+    int APPLE_PRICE; // 판매하는 사과 가격(대문자 -> 변하지 않는 값임을 암시)
+    int numOfApples; // 사과 개수
+    int myMoney; // 판매자의 돈
 
-struct Car { // Car 구조체 정의
-    char gamerID[ID_LEN]; // 소유자 ID
-    int fuelGauge; // 연료량
-    int curSpeed; // 현재속도
-
-    void ShowCarState() { // 차의 현재 상태 출력 함수
-        cout << "소유자ID: " << gamerID << endl; // 위에 선언된 gamerID에 접근
-        cout << "연료량: " << fuelGauge << "%" << endl;
-        cout << "현재속도: " << curSpeed << "km/s" << endl << endl;
+public:
+    void InitMembers(int price, int num, int money) { // (판매할 사과 가격, 가지고 있는 사과 개수, 가지고 있는 돈)
+        APPLE_PRICE = price;
+        numOfApples = num;
+        myMoney = money;
     }
 
-    void Accel() { // 엑셀 함수
-        if (fuelGauge <= 0) // 위에 선언된 fuelGauge에 접근
-            return; // 엑셀 못 밟음.
-        else // 차의 연료량이 있다면,
-            fuelGauge -= FUEL_STEP; // 차의 연료량에서 FUEL_STEP(2)을 뺌.
-
-        if (curSpeed + ACC_STEP >= MAX_SPD) { // 만약 차의 현재속도에 엑셀을 밟은 만큼의 속도(10)를 더한 값이 최고 속도(200)보다 크면
-            curSpeed = MAX_SPD; // 차의 속도를 최고속도로 맞춤.
-            return;
-        }
-
-        curSpeed += ACC_STEP; // 차의 현재속도에 엑셀을 밟은 만큼의 속도를 더한 값이 최고 속도보다 작으면,
-        // 차의 속도에 ACC_STEP(10)을 더한 값 저장.
+    int SaleApples(int money) { // 사과 판매 함수, 인수로 구매자가 낸 돈을 받음
+        int num = money/APPLE_PRICE; // num: 판 사과 개수(구매자가 낸 돈/사과 가격)
+        numOfApples -= num; // 판매자 기존 사과 개수 - 판 사과 개수
+        myMoney += money; // 돈 + 받은 돈
+        return num; // 판매한 사과 개수 반환
     }
 
-    void Break() { // 브레이크 함수
-        if (curSpeed < BRK_STEP) { // 차의 속도가 브레이크를 밟으면 줄어드는 속도량(10)보다 작으면
-            curSpeed = 0; // 차 속도는 0
-            return;
-        }
-
-        curSpeed -= BRK_STEP; // 그게 아니라면, 차 속도에서 10을 뺌.
+    void ShowSalesResult() { // 판매 현황 함수
+        cout << "남은 사과: " << numOfApples << endl;
+        cout << "판매 수익: " << myMoney << endl;
     }
-
 };
 
+class FruitBuyer { // 사과 구매자 클래스 선언
+private:
+    int myMoney; // 구매자 돈
+    int numOfApples; // 구매자가 산 총 사과 개수
+
+public:
+    void InitMembers(int money) { // (구매자가 가진 돈)
+        myMoney = money;
+        numOfApples = 0; // 구매자가 구매한 사과 개수
+    }
+
+    void BuyApples(FruitSeller &seller, int money) { // 사과 구매 함수 (판매자 참조자 선언, 구매하기 위해 낸 돈)
+        numOfApples += seller.SaleApples(money); // 구매자 가진 사과 개수에, 판매자에게 산 사과 개수를 더함. public -> 함수 호출 어디서나 가능
+        myMoney -= money; // 돈은 낸 만큼 감소
+    }
+
+    void ShowBuyResult() { // 구매 결과 함수
+        cout << "현재 잔액: " << myMoney << endl;
+        cout << "사과 개수: " << numOfApples << endl << endl;
+    }
+};
 
 int main(void) {
-    Car run99 = {"run99", 100, 0}; // run99라는 이름의 Car 구조체 생성
-    Car sped77 = {"sped77", 100, 0};
+    FruitSeller seller; // seller 객체 생성
+    seller.InitMembers(1000, 20, 0); // 사과 가격: 1000, 개수: 20, 돈: 0
+    FruitBuyer buyer; // buyer 객체 생성
+    buyer.InitMembers(5000); // 돈: 5000
+    buyer.BuyApples(seller, 2000); // 과일의 구매!!, seller 객체에게 2000원 지불
+
+    cout << "과일 판매자의 현황" << endl;
+    seller.ShowSalesResult();
+    cout << "과일 구매자의 현황" << endl;
+    buyer.ShowBuyResult();
     return 0;
 }
