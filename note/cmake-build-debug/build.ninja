@@ -49,8 +49,20 @@ cmake_ninja_workdir = /Users/twalla/projects/OOP_Study/note/cmake-build-debug/
 
 build cmake_object_order_depends_target_note: phony || CMakeFiles/note.dir
 
-build CMakeFiles/note.dir/main.cpp.o: CXX_COMPILER__note_Debug /Users/twalla/projects/OOP_Study/note/main.cpp || cmake_object_order_depends_target_note
-  DEP_FILE = CMakeFiles/note.dir/main.cpp.o.d
+build CMakeFiles/note.dir/Point.cpp.o: CXX_COMPILER__note_Debug /Users/twalla/projects/OOP_Study/note/Point.cpp || cmake_object_order_depends_target_note
+  DEP_FILE = CMakeFiles/note.dir/Point.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/note.dir
+  OBJECT_FILE_DIR = CMakeFiles/note.dir
+
+build CMakeFiles/note.dir/Rectangle.cpp.o: CXX_COMPILER__note_Debug /Users/twalla/projects/OOP_Study/note/Rectangle.cpp || cmake_object_order_depends_target_note
+  DEP_FILE = CMakeFiles/note.dir/Rectangle.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/note.dir
+  OBJECT_FILE_DIR = CMakeFiles/note.dir
+
+build CMakeFiles/note.dir/RectangleConstructor.cpp.o: CXX_COMPILER__note_Debug /Users/twalla/projects/OOP_Study/note/RectangleConstructor.cpp || cmake_object_order_depends_target_note
+  DEP_FILE = CMakeFiles/note.dir/RectangleConstructor.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/note.dir
   OBJECT_FILE_DIR = CMakeFiles/note.dir
@@ -63,7 +75,7 @@ build CMakeFiles/note.dir/main.cpp.o: CXX_COMPILER__note_Debug /Users/twalla/pro
 #############################################
 # Link the executable note
 
-build note: CXX_EXECUTABLE_LINKER__note_Debug CMakeFiles/note.dir/main.cpp.o
+build note: CXX_EXECUTABLE_LINKER__note_Debug CMakeFiles/note.dir/Point.cpp.o CMakeFiles/note.dir/Rectangle.cpp.o CMakeFiles/note.dir/RectangleConstructor.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/note.dir
   POST_BUILD = :

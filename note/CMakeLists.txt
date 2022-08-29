@@ -3,4 +3,4 @@ project(note)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(note main.cpp)
+add_executable(note Point.h Point.cpp Rectangle.h Rectangle.cpp RectangleConstructor.cpp)
