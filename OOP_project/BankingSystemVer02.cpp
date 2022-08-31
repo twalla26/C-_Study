@@ -1,0 +1,167 @@
+/*
+ * Banking System Ver 0.2
+ * 작성자: 송수민
+ * 내용: Account 클래스 정의, 객체 포인터 배열 적용
+ */
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+const int NAME_LEN = 20;
+
+void ShowMenu(void); // 메뉴출력
+void MakeAccount(void); // 계좌개설을 위한 함수
+void DepositMoney(void); // 입금
+void WithdrawMoney(void); // 출금
+void ShowAllAccInfo(void); // 잔액조회
+
+enum {MAKE = 1, DEPOSIT, WITHDRAW, INQUIRE, EXIT};
+
+class Account { // 계좌 클래스
+private:
+    int accID; // 계좌번호
+    int balance; // 잔액
+    char * cusName; // 고객이름
+
+public:
+    Account(int ID, int money, char * name) // 생성자
+        : accID(ID), balance(money) {
+        cusName = new char[strlen(name) + 1]; // cusName 동적 할당, 배열 크기 설정
+        strcpy(cusName, name); // cusName <- name
+    }
+
+    int GetAccID() { // 계좌ID 반환 함수
+        return accID;
+    }
+
+    void Deposit(int money) { // 입금 함수
+        balance += money;
+    }
+
+    int Withdraw(int money) { // 출금 함수
+        if (balance < money) { // 잔액이 출금액보다 적을 때
+            return 0; // 출금 불가
+        }
+        // 출금 가능할 때
+        balance -= money; // 잔액에서 출금액을 빼고
+        return money; // 출금액 반환
+    }
+
+    void ShowAccInfo() { // 계좌 정보 출력 함수
+        cout << "계좌ID: " << accID << endl;
+        cout << "이름: " << cusName << endl;
+        cout << "잔액: " << balance << endl;
+    }
+
+    ~Account() { // 소멸자
+        delete []cusName; // 동적할당된 cusName 메모리 해제
+    }
+};
+
+Account * accArr[100]; // Account 객체 저장을 위한 배열
+int accNum = 0; // 저장된 Account 수
+
+int main(void) {
+    int choice; // 사용자가 선택한 메뉴
+
+    while (1) {
+        ShowMenu(); // 메뉴 함수 호출
+        cout << "선택: ";
+        cin >> choice; // 메뉴 선택 받은 후 choice에 저장
+        cout << endl;
+
+        switch (choice) {
+            case MAKE: // choice가 1이라면
+                MakeAccount(); // 계좌 개설 함수 호출
+                break;
+            case DEPOSIT:
+                DepositMoney();
+                break;
+            case WITHDRAW:
+                WithdrawMoney();
+                break;
+            case INQUIRE:
+                ShowAllAccInfo();
+                break;
+            case EXIT: // choice가 5라면
+                for (int i = 0; i < accNum; i++) { // 저장된 계좌들 하나하나
+                    delete accArr[i]; // 메모리 해제
+                }
+                return 0;
+            default: // choice가 1,2,3,4,5 외의 숫자라면
+                cout << "Illegal selection.." << endl; // 에러
+        }
+    }
+
+    return 0;
+}
+
+void ShowMenu(void) { // 메뉴 출력 및 선택 함수
+    cout << "-----Menu-----" << endl;
+    cout << "1. 계좌개설" << endl;
+    cout << "2. 입금" << endl;
+    cout << "3. 출금" << endl;
+    cout << "4. 계좌정보 전체 출력" << endl;
+    cout << "5. 프로그램 종료" << endl;
+}
+
+void MakeAccount(void) { // 계좌 개설 함수
+    int id; // 계좌 ID
+    char name[NAME_LEN]; // 이름, 길이는 20 이하
+    int balance; // 잔액
+
+    cout << "[계좌개설]" << endl;
+    cout << "계좌ID: "; cin >> id;
+    cout << "이름: "; cin >> name;
+    cout << "입금액: "; cin >> balance;
+    cout << endl;
+
+    accArr[accNum++] = new Account(id, balance, name); // 입력 받은 정보로 계좌 개설 후, 계좌 객체 배열에 객체 주소 저장
+}
+
+void DepositMoney(void) { // 입금 함수
+    int money; // 입금할 돈
+    int id; // 계좌ID
+    cout << "[입금]" << endl;
+    cout << "계좌ID: "; cin >> id; // ID 받음
+    cout << "입금액: "; cin >> money; // 입금할 돈 받음
+
+    for (int i = 0; i < accNum; i++) { // 저장된 계좌 하나하나
+        if (accArr[i]->GetAccID() == id) { // 입력 받은 계좌 ID와 같은 걸 찾아서
+            accArr[i]->Deposit(money); // 돈 입금
+            cout << "입금완료" << endl << endl;
+            return;
+        }
+    }
+    cout << "유효하지 않은 ID 입니다." << endl << endl; // 찾는 계좌가 없으면 에러
+}
+
+void WithdrawMoney(void) { // 출금 함수
+    int money; // 출금액
+    int id; // 계좌번호
+    cout << "[출금]" << endl;
+    cout << "계좌ID: "; cin >> id;
+    cout << "출금액: "; cin >> money;
+
+    for (int i = 0; i < accNum; i++) { // 저장된 계좌 하나하나
+        if (accArr[i]->GetAccID() == id) { // 입력받은 번호와 같은 걸 찾아서
+            if (accArr[i]->Withdraw(money) == 0) { // 만약 반환값이 0(출금 불가능)
+                cout << "잔액부족" << endl; // 잔액부족 알림
+                return;
+            }
+            // 출금 가능하다면
+            cout << "출금완료" << endl << endl;
+            return;
+        }
+    }
+    // 계좌를 찾지 못하면
+    cout << "유효하지 않은 ID 입니다." << endl << endl;
+}
+
+void ShowAllAccInfo(void) { // 계좌 정보 출력 함수
+    for (int i = 0; i < accNum; i++) { // 저장된 계좌 하나하나
+        accArr[i]->ShowAccInfo(); // 계좌 정보 출력 함수 호출
+        cout << endl;
+    }
+}

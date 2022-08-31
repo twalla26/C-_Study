@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="OOP_Study" targetName="OOP_Study" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -15,52 +16,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804b170e-fbbe-4cd5-bcce-813ee495359a" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/C++_Study.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/.idea/note.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/cache-v2-1331ec22304898225b26.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-8ae9b2176b53e8349357.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-8d2a41373d70b06b6173.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/index-2022-08-08T18-47-54-0325.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/target-note-Debug-3c63653f3e2c16062af9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-2ebdd397a9b9a925bf87.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.ninja_deps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.ninja_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/note.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/build.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/note" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-77c880c3b631a17b9cd5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/index-2022-08-29T08-59-10-0771.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.cmake/api/v1/reply/target-note-Debug-2c75f885da7fe65dc152.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/note/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/note/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/note/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/note/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/cmake-build-debug/note" beforeDir="false" afterPath="$PROJECT_DIR$/note/cmake-build-debug/note" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +35,11 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -87,21 +54,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true"
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/Users/twalla/projects/OOP_Study",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RunManager">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OOP_Study" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OOP_Study" TARGET_NAME="OOP_Study" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OOP_Study" RUN_TARGET_NAME="OOP_Study">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -114,6 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1661233440259</updated>
       <workItem from="1661233442642" duration="15000" />
+      <workItem from="1661832698887" duration="15000" />
+      <workItem from="1661839159803" duration="314000" />
     </task>
     <servers />
   </component>
